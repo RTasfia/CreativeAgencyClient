@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../../images/logos/logo.png';
 
 const NavMenu = () => {
@@ -17,7 +18,7 @@ const NavMenu = () => {
                     <Nav.Link className="mr-5" href="#home">Our Team</Nav.Link>
                     <Nav.Link className="mr-5" href="#home">Contact Us</Nav.Link>
                     <Nav.Link className="mr-5" href="#home">
-                        <button className="btn-brand">Login</button>
+                        <Link to="/login"><button className="btn-brand">  Login</button> </Link>
                     </Nav.Link>
 
                 </Nav>
