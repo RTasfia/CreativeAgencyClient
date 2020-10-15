@@ -6,19 +6,19 @@ import ServiceStatusCard from '../ServiceStatusCard/ServiceStatusCard';
 const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    const [allService, setAllService] = useState([]);
+    const [userService, setUserService] = useState([]);
     useEffect(()=>{
         fetch("http://localhost:5000/currentUser?email="+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
-            setAllService(data)
+            setUserService(data)
         })
     },[])
-    console.log("allservice", allService);
+    console.log("allservice", userService);
     return (
         <div className="row">
             {
-                allService.map(service => <ServiceStatusCard service={service}></ServiceStatusCard>)
+                userService.map(service => <ServiceStatusCard service={service}></ServiceStatusCard>)
             }
             
             

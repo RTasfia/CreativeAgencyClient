@@ -6,7 +6,6 @@ const AddService = () => {
 
     const handleSubmit = () => {
         const formData = new FormData()
-        console.log(serviceInfo);
         formData.append('file', file);
         formData.append('title', serviceInfo.title);
         formData.append('description', serviceInfo.description);

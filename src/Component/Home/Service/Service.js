@@ -23,13 +23,12 @@ const Service = () => {
 
     },[])
 
-    console.log(allService);
     return (
         <section className="mt-5">
             
             {/* to add all service
-             */}
              <Button onClick = {handleClick}>click</Button>
+             */}
 
             <h2 style={{textAlign:"center"}}>Provide Awesome <span style={{color: "olivedrab"}}>Serivces</span></h2>
             <div className="row mt-4 offset-1">

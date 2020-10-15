@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const PlaceOrder = () => {
     const history = useHistory();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [userInfo, setUserInfo] = useState({ status: "pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
+    const [userInfo, setUserInfo] = useState({icon: "https://i.ibb.co/TBHrqj5/service1.png",status: "pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
 
     const handleSubmit = (e) => {
         fetch('http://localhost:5000/addCustomer', {
@@ -21,23 +21,17 @@ const PlaceOrder = () => {
             .catch(error => {
                 console.error(error)
             })
-        history.push("/order")
         e.preventDefault();
 
     }
     const handleBlur = (e) => {
         const newUser = { ...userInfo };
         newUser[e.target.name] = e.target.value;
-        if (e.target.name === "service") {
-            // const currentService = allService.find(service => service.title === e.target.value);
-            // console.log(currentService);
-        }
         setUserInfo(newUser);
     }
 
     return (
         <section className="p-4 pr-5" style={{ width: "60%" }}>
-            <h5 className="text-brand">Order</h5>
             
             <form action="" >
                     <div className="form-group">
@@ -61,6 +55,11 @@ const PlaceOrder = () => {
                     </div>
                     <button onClick={handleSubmit} type="submit" className="btn-brand">Submit</button>
                 </form>
+
+            
+            
+            
+            
         </section>
     );
 };

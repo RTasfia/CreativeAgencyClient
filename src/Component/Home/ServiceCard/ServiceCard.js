@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 const ServiceCard = ({ service }) => {
     const history = useHistory();
     const handleOrder = () => {
-        history.push("/order");
+        history.push("/adminOrCustomer");
     }
     return (
 
@@ -13,7 +13,7 @@ const ServiceCard = ({ service }) => {
             <Card onClick={handleOrder} style={{ width: '16rem', textAlign: "center" }}>
                 <Card.Body>
                     {
-                        service.image ? <img style={{height: '100px'}} src={`data:image/png;base64,${service.image.img}`} alt=""/> :
+                        service.image ? <img style={{height: '200px'}} src={`data:image/png;base64,${service.image.img}`} alt=""/> :
                         <img style={{ height: "100px" }} src={service.icon} alt="" />
 
 

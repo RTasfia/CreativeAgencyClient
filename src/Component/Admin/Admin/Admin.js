@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../../App';
 import AddAdmin from '../AddAdmin/AddAdmin';
 import AddService from '../AddService/AddService';
 import AdminSlideBar from '../AdminSlideBar/AdminSlideBar';
 import AllUser from '../AllUser/AllUser';
 
 const Admin = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const [serviceListStatus, setServiceListStatus] = useState(true);
     const [addServiceStatus, setAddServiceStatus] = useState(false);
     const [addAdminStatus, setAddAdminStatus] = useState(false);
@@ -31,6 +35,12 @@ const Admin = () => {
                 <AdminSlideBar handleServiceList={handleServiceList} handleAddService={handleAddService} handleAddAdmin={handleAddAdmin}></AdminSlideBar>
             </div>
             <div className="col-md-9 mt-5" style={{backgroundColor: "#F4FDFB", height: "100vh"}}>
+                <div style={{textAlign: "right"}}>
+                <button className="btn-brand mr-3 mt-3">{loggedInUser.name}</button>
+
+
+                </div>
+
                 {
                     serviceListStatus&& <AllUser></AllUser>
                 }

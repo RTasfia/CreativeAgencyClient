@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Admin from './Component/Admin/Admin/Admin';
+import AdminOrCustomer from './Component/AdminOrCustomer/AdminOrCustomer';
 import Order from './Component/Customer/Order/Order';
 import Home from './Component/Home/Home/Home';
 import PrivateRoute from './Component/Home/PrivateRoute/PrivateRoute';
@@ -21,19 +22,12 @@ function App() {
 
     <Router>
       <Switch>
+
         <Route path = "/login">
           <Login></Login>
         </Route>
-        <Route path = "/admin">
-          <Admin></Admin>
-        </Route>
-        {/* <Route path = "/of">
-        <Order></Order>
-
-
-        </Route> */}
-        <PrivateRoute path = "/order">
-        <Order></Order>
+        <PrivateRoute path = "/adminOrCustomer">
+          <AdminOrCustomer></AdminOrCustomer>
 
         </PrivateRoute>
         <Route path = "/">

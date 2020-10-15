@@ -1,9 +1,13 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import logo from '../../../images/logos/logo.png';
 
 const NavMenu = () => {
+    const history = useHistory();
+    const handleClick = () => {
+        history.push("/adminOrCustomer");
+    }
     return (
         <div className="container">
             <Navbar expand="lg">
@@ -17,8 +21,8 @@ const NavMenu = () => {
                     <Nav.Link className="mr-5" href="#link">Our Portfolio</Nav.Link>
                     <Nav.Link className="mr-5" href="#home">Our Team</Nav.Link>
                     <Nav.Link className="mr-5" href="#home">Contact Us</Nav.Link>
-                    <Nav.Link className="mr-5" href="#home">
-                        <Link to="/login"><button className="btn-brand">  Login</button> </Link>
+                    <Nav.Link className="mr-5" href="">
+                        <button onClick={handleClick} className="btn-brand">  Login</button>
                     </Nav.Link>
 
                 </Nav>
