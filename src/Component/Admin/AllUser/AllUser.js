@@ -1,23 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AllUser = () => {
-    const FakeDataForService = [
-        {
-            title: "Web & Mobile Design",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatibus ea veritatis doloremque deleniti officia.",
-            icon: "service1.png"
-        },
-        {
-            title: "Graphics Design",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatibus ea veritatis doloremque deleniti officia.",
-            icon: "service2.png"
-        },
-        {
-            title: "Web Development",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, voluptatibus ea veritatis doloremque deleniti officia.",
-            icon: "service3.png"
-        }
-    ]
+    const [customer, setCustomer] = useState([])
+    useEffect(()=>{
+        fetch("http://localhost:5000/allCustomer")
+        .then(res => res.json())
+        .then(data => {
+            setCustomer(data)
+        })
+    },[])
     
     return (
         <div className="m-5" style={{backgroundColor: "white"}}>
@@ -33,16 +24,14 @@ const AllUser = () => {
             </thead>
             <tbody>
                 {
-                  FakeDataForService.map((x, index) => 
+                  customer.map((user) => 
                         
                     <tr>
-                        <td>{index + 1}</td>
-                        <td>Name</td>
-                        <td>Email</td>
-                        <td></td>
-                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, placeat!</td>
-                        <td></td>
-                        <td></td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.service}</td>
+                        <td>{user.description}</td>
+                        <td>{user.status}</td>
                     </tr>
                     )
                 }

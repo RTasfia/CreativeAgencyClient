@@ -4,6 +4,7 @@ import PlaceOrder from '../PlaceOrder/PlaceOrder';
 import ServiceList from '../ServiceList/ServiceList';
 import SideBar from '../SideBar/SideBar';
 
+
 const Order = () => {
     const [listStatus, setListStatus] = useState(false);
     const [reviewStatus, setReviewStatus] = useState(false);
@@ -24,6 +25,7 @@ const Order = () => {
         setListStatus(false);
         setOrderStatus(false);
     }
+    
     return (
         <section className="row ">
             <div className="col-md-3 mb-4">

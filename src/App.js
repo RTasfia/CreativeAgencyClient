@@ -27,8 +27,14 @@ function App() {
         <Route path = "/admin">
           <Admin></Admin>
         </Route>
+        {/* <Route path = "/of">
+        <Order></Order>
+
+
+        </Route> */}
         <PrivateRoute path = "/order">
-          <Order></Order>
+        <Order></Order>
+
         </PrivateRoute>
         <Route path = "/">
           <Home></Home>

@@ -12,7 +12,13 @@ const ServiceCard = ({ service }) => {
         <div className="col-md-4 mb-4">
             <Card onClick={handleOrder} style={{ width: '16rem', textAlign: "center" }}>
                 <Card.Body>
-                    <img style={{ height: "100px" }} src={require(`../../../images/icons/${service.icon}`)} alt="" />
+                    {
+                        service.image ? <img style={{height: '100px'}} src={`data:image/png;base64,${service.image.img}`} alt=""/> :
+                        <img style={{ height: "100px" }} src={service.icon} alt="" />
+
+
+                    }
+
                     <Card.Title>{service.title}</Card.Title>
                     <Card.Text>{service.description}</Card.Text>
                 </Card.Body>
