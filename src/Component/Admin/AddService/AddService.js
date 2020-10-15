@@ -37,7 +37,7 @@ const AddService = () => {
             <form>
                     <h3 className="text-brand">Add Services</h3>
                     <div className="form-group">
-                    <input onBlur={handleBlur} type="text" className="form-control"  name="title" placeholder="Your name/ comapany name" />
+                    <input onBlur={handleBlur} type="text" className="form-control"  name="title" placeholder="Service title" />
                     </div>
                     <div className="form-group">
                         <textarea  onBlur={handleBlur} name="description" className="form-control" id="" cols="30" rows="5" placeholder="Description"></textarea>
