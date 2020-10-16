@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const AllUser = () => {
+    const [status, setStatus] = useState({id: ""})
     const [customer, setCustomer] = useState([])
     useEffect(()=>{
         fetch("http://localhost:5000/allCustomer")
@@ -9,7 +10,27 @@ const AllUser = () => {
             setCustomer(data)
         })
     },[])
-    
+
+    const handleChange = (e) => {
+
+        const currentStatus = {...status};
+        currentStatus.status = e.target.value;
+        setStatus(currentStatus);
+        fetch("http://localhost:5000/updateStatus", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(currentStatus)
+        })
+        console.log(e.target.value);
+    }
+    const handleClick = (id)=> {
+        const info = {...status};
+        info.id = id;
+        setStatus(info);
+        console.log(id);
+
+
+    }
     return (
         <div className="m-5" style={{backgroundColor: "white"}}>
             <table className="table table-borderless">
@@ -31,7 +52,15 @@ const AllUser = () => {
                         <td>{user.email}</td>
                         <td>{user.service}</td>
                         <td>{user.description}</td>
-                        <td>{user.status}</td>
+                        <td>
+                        <select onClick={()=>handleClick(user._id)} onChange={handleChange} className="form-control" name="status" >
+                                <option value={`${user.status}`}>{user.status}</option>
+                                <option value="Pending">Pending</option>
+                                <option value="On going">On going</option>
+                                <option value="Done">Done</option>
+                        </select>
+                            
+                        </td>
                     </tr>
                     )
                 }

@@ -36,11 +36,9 @@ const Admin = () => {
             </div>
             <div className="col-md-9 mt-5" style={{backgroundColor: "#F4FDFB", height: "100vh"}}>
                 <div style={{textAlign: "right"}}>
-                <button className="btn-brand mr-3 mt-3">{loggedInUser.name}</button>
-
-
+                    <img style={{height: "50px", borderRadius: "50%"}} src={loggedInUser.photoURL} alt=""/>
+                    <button className="btn-brand m-3">{loggedInUser.name}</button>
                 </div>
-
                 {
                     serviceListStatus&& <AllUser></AllUser>
                 }

@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const PlaceOrder = () => {
-    const history = useHistory();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [userInfo, setUserInfo] = useState({icon: "https://i.ibb.co/TBHrqj5/service1.png",status: "pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
+    const [userInfo, setUserInfo] = useState({icon: "https://i.ibb.co/TBHrqj5/service1.png",status: "Pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
 
     const handleSubmit = (e) => {
         fetch('http://localhost:5000/addCustomer', {

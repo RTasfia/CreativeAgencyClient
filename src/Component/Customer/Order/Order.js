@@ -34,10 +34,14 @@ const Order = () => {
             <div className="col-md-3 mb-4">
                 <SideBar handleOrder={handleOrder} handleServiceList={handleServiceList} handleReview={handleReview}></SideBar>
             </div>
-            <div className="col-md-9 mt-5" style={{ backgroundColor: " #F4FDFB", height: "100vh" }}>
+            <div className="col-md-9 mt-5" style={{ backgroundColor: " #F4FDFB"}}>
                 <div className="d-flex justify-content-between mt-3">
-                    <h5 className="text-brand">Order</h5>
-                    <button className="btn-brand mr-3">{loggedInUser.name}</button>
+                    <h3 className="text-brand">Order</h3>
+                    <div>
+                        <img style={{height: "50px", borderRadius: "50%"}} src={loggedInUser.photoURL} alt=""/>
+
+                        <button className="btn-brand m-3">{loggedInUser.name}</button>
+                    </div>
 
                 </div>
                 {
