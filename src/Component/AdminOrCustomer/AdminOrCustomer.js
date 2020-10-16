@@ -8,7 +8,7 @@ const AdminOrCustomer = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://warm-shore-67382.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -16,6 +16,7 @@ const AdminOrCustomer = () => {
             .then(res => res.json())
             .then(data => setIsAdmin(data));
     }, [])
+    console.log(loggedInUser);
     return (
         <div>
             {

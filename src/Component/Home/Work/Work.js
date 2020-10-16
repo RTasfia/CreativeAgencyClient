@@ -11,7 +11,7 @@ import carousel4 from '../../../images/carousel-5.png';
 const Work = () => {
     return (
         <section className="mt-4 mb-4" style={{backgroundColor: "#111330", height: "600px"}}>
-            <h2 className="pt-4" style={{color: "white", textAlign: "center"}}>Here are some of <span style={{color: "olivedrab"}}>our works</span></h2>
+            <h2 className="pt-4" style={{color: "white", textAlign: "center"}}>Here Are Some of <span style={{color: "olivedrab"}}>Our Works</span></h2>
             <Carousel className="mx-auto mt-4" style={{height: "340px", width: "40%"}}>
                 <Carousel.Item>
                     <img className="d-block w-100" style={{height: "340px", width: "40%"}} src={carousel1}alt="First slide"/>

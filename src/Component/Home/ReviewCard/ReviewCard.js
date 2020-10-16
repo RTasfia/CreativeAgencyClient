@@ -2,7 +2,6 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 
 const ReviewCard = ({ review }) => {
-    console.log(review);
     return (
         <div className="col-md-4 mb-4">
             <Card style={{ width: '16rem' }}>

@@ -8,14 +8,14 @@ const Review = () => {
 
     // function for adding all reviews
     const handleClick = () => {
-        fetch("http://localhost:5000/allReview", {
+        fetch("https://warm-shore-67382.herokuapp.com/allReview", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(FakeDataForReview)
         })
     }
     useEffect(()=> {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://warm-shore-67382.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => {
             setAllReview(data);

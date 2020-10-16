@@ -4,13 +4,13 @@ const AddService = () => {
     const [serviceInfo, setServiceInfo] = useState({});
     const [file, setFile] = useState(null);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         const formData = new FormData()
         formData.append('file', file);
         formData.append('title', serviceInfo.title);
         formData.append('description', serviceInfo.description);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://warm-shore-67382.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
@@ -21,6 +21,8 @@ const AddService = () => {
             .catch(error => {
                 console.error(error)
             })
+            e.preventDefault();
+
 
     }
     const handleBlur = (e) => {

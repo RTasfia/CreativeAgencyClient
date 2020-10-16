@@ -34,7 +34,7 @@ const Admin = () => {
             <div className="col-md-3 mb-4">
                 <AdminSlideBar handleServiceList={handleServiceList} handleAddService={handleAddService} handleAddAdmin={handleAddAdmin}></AdminSlideBar>
             </div>
-            <div className="col-md-9 mt-5" style={{backgroundColor: "#F4FDFB", height: "100vh"}}>
+            <div className="col-md-9 mt-5" style={{backgroundColor: "#F4FDFB"}}>
                 <div style={{textAlign: "right"}}>
                     <img style={{height: "50px", borderRadius: "50%"}} src={loggedInUser.photoURL} alt=""/>
                     <button className="btn-brand m-3">{loggedInUser.name}</button>

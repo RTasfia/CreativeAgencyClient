@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 
 const PlaceOrder = () => {
+    const position = Math.floor(Math.random()*5)
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [userInfo, setUserInfo] = useState({icon: "https://i.ibb.co/TBHrqj5/service1.png",status: "Pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
+    const icons= ["https://i.ibb.co/TBHrqj5/service1.png","https://i.ibb.co/Jn2NGHQ/service2.png", "https://i.ibb.co/TqM2STY/service3.png","https://i.ibb.co/JtFVnVR/service4.png", "https://i.ibb.co/ZmZVsdg/service5.png"]
+    const [userInfo, setUserInfo] = useState({icon: icons[position],status: "Pending", name: `${loggedInUser.name}`, email: `${loggedInUser.email}` });
 
     const handleSubmit = (e) => {
-        fetch('http://localhost:5000/addCustomer', {
+        fetch('https://warm-shore-67382.herokuapp.com/addCustomer', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userInfo)

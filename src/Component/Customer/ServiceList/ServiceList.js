@@ -1,6 +1,5 @@
 import React, {  useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
-import FakeDataForServiceList from '../../../FakeDataForServiceList/FakeDataForServiceList';
 import ServiceStatusCard from '../ServiceStatusCard/ServiceStatusCard';
 
 const ServiceList = () => {
@@ -8,13 +7,12 @@ const ServiceList = () => {
 
     const [userService, setUserService] = useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/currentUser?email="+loggedInUser.email)
+        fetch("https://warm-shore-67382.herokuapp.com/currentUser?email="+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
             setUserService(data)
         })
     },[])
-    console.log("allservice", userService);
     return (
         <div className="row">
             {

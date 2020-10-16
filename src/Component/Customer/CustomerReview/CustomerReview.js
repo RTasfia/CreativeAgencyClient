@@ -36,7 +36,7 @@ const CustomerReview = () => {
                         <input onBlur={handleBlur} type="text" className="form-control" name="designation" placeholder="Designation, Comapany name" />
                     </div>
                     <div className="form-group">
-                        <textarea  onBlur={handleBlur} className="form-control" name="description" id="" cols="30" rows="5" placeholder="Project Detail"></textarea>
+                        <textarea  onBlur={handleBlur} className="form-control" name="description" id="" cols="30" rows="5" placeholder="Description"></textarea>
                     </div>
                     
                     <button onClick={handleSubmit} type="submit" className="btn-brand">Submit</button>

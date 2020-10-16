@@ -8,14 +8,14 @@ const Service = () => {
 
     // function for adding all service
     const handleClick = () => {
-        fetch("http://localhost:5000/allService", {
+        fetch("https://warm-shore-67382.herokuapp.com/allService", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(FakeDataForService)
         })
     }
     useEffect(()=> {
-        fetch('http://localhost:5000/services')
+        fetch('https://warm-shore-67382.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             setAllService(data);

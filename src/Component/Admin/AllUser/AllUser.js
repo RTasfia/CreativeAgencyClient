@@ -4,7 +4,7 @@ const AllUser = () => {
     const [status, setStatus] = useState({id: ""})
     const [customer, setCustomer] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/allCustomer")
+        fetch("https://warm-shore-67382.herokuapp.com/allCustomer")
         .then(res => res.json())
         .then(data => {
             setCustomer(data)
@@ -16,18 +16,16 @@ const AllUser = () => {
         const currentStatus = {...status};
         currentStatus.status = e.target.value;
         setStatus(currentStatus);
-        fetch("http://localhost:5000/updateStatus", {
+        fetch("https://warm-shore-67382.herokuapp.com/updateStatus", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(currentStatus)
         })
-        console.log(e.target.value);
     }
     const handleClick = (id)=> {
         const info = {...status};
         info.id = id;
         setStatus(info);
-        console.log(id);
 
 
     }

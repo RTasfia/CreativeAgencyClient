@@ -12,13 +12,22 @@ const AddAdmin = () => {
         setMakeAdmin(newAdmin);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         
-        fetch("http://localhost:5000/addAdmin", {
+        fetch("https://warm-shore-67382.herokuapp.com/addAdmin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(makeAdmin)
         })
+        .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+            })
+            .catch(error => {
+                console.error(error)
+            })
+            e.preventDefault();
     }
     return (
         <section className="p-4 pr-5" style={{ width: "60%" }}>

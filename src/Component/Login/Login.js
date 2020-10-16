@@ -19,19 +19,29 @@ const Login = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
             const {displayName, email,photoURL} = result.user;
-            console.log(result.user);
 
             const signedInUser = {...loggedInUser};
             signedInUser.name = displayName;
             signedInUser.email = email;
             signedInUser.photoURL = photoURL;
             setLoggedInUser(signedInUser);
-            history.replace(from);
-          }).catch(function(error) {
+            storeAuthToken();
+        }).catch(function(error) {
             const errorMessage = error.message;
             alert(errorMessage);
           });
     }
+    const storeAuthToken = () => {
+        console.log(loggedInUser);
+        firebase.auth().currentUser.getIdToken(true)
+          .then(function (idToken) {
+            sessionStorage.setItem('token', idToken);
+            sessionStorage.setItem('info', loggedInUser);
+
+            history.replace(from);
+          }).catch(function (error) {
+          });
+      }
     return (
         <section>
             <div style={{textAlign:"center"}}>
