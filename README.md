@@ -2,7 +2,6 @@
 ## Overview
 This is a full-stack (MERN) website with an authentication system for purchasing an online course. There are different dashboard for user and admin (admin part is fully protected).
 
----
 
 ### Client
 - Authenticated user can order a service
@@ -15,7 +14,6 @@ This is a full-stack (MERN) website with an authentication system for purchasing
 - Admin can add new admin
 - Admin can change user's order status
 
----
 
 ## Technology
 
@@ -31,7 +29,8 @@ This is a full-stack (MERN) website with an authentication system for purchasing
 - Express.js
 - Heroku
 - Base 64
+- font-awesome
 
---- 
 [Live Website](https://creative-agency-5749b.web.app/)
 
+[Resume](https://drive.google.com/file/d/1F03PlcYOsvTY1gqp99P1n6LYOBpyt4qv/view?usp=sharing)
